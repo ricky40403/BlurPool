@@ -14,7 +14,7 @@ It only needs to add the convolutional param: blur_kernel
 But the drawback is that Caffe uses zero paddings instead of other types.  
 ```
 **Note that this is same as the origin paper which using depthwise**
-**Here will also check the bias_term (suppose to be false)**
+**Here will also check the bias_term (suppose to be false) and the lr_rate, decay_rate should be 0**
 ```
 ****
 caffe.proto  
