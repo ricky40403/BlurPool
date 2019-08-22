@@ -167,6 +167,7 @@ void BaseConvolutionLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,
     shared_ptr<Filler<Dtype> > weight_filler(GetFiller<Dtype>(
         this->layer_param_.convolution_param().weight_filler()));
     weight_filler->Fill(this->blobs_[0].get());
+    bool bKernelBlur = this->layer_param_.convolution_param().blur_kernel();
     if (bKernelBlur){
       CHECK_EQ(kernel_shape_data[0], kernel_shape_data[1])
         << "Blur kernek only support same kernel_h, kernel_w";
